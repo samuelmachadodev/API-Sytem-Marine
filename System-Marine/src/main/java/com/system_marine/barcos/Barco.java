@@ -24,7 +24,6 @@ public class Barco {
 	
 	@Id @GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
-	private boolean ativo;
 	private String nome;
 	private String proprietario;
 	private String marinheiro;
@@ -33,6 +32,7 @@ public class Barco {
 	private String registro;
 	private String observacoes;
 	private int vaga;
+	private String imagemBase64; 
 
 	
 	public Barco() {
@@ -40,7 +40,6 @@ public class Barco {
 	}
 	
 	public Barco(DadosCadastroBarco dados) {
-		this.ativo = true;
 		this.setNome(dados.nome());
 		this.setProprietario(dados.proprietario());
 		this.setMarinheiro(dados.marinheiro());
@@ -49,6 +48,7 @@ public class Barco {
 		this.setRegistro(dados.registro());
 		this.setObservacoes(dados.observacoes());
 		this.setVaga(dados.vaga());
+		this.setImagemBase64(dados.imagemBase64());
 	}
 
 	public String getNome() {
@@ -93,6 +93,13 @@ public class Barco {
 	public void setObservacoes(String observacoes) {
 		this.observacoes = observacoes;
 	}
+	public String getImagemBase64() {
+	        return imagemBase64;
+	    }
+
+	public void setImagemBase64(String imagemBase64) {
+	        this.imagemBase64 = imagemBase64;
+	    }
 	public int getVaga() {
 		return vaga;
 	}
@@ -108,15 +115,6 @@ public class Barco {
 		this.id = id;
 	}
 
-
-	public boolean isAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
-	
 	public void atualizarInformações(@Valid DadosAtualizarBarco dados) {
 		if (dados.nome() != null) {
 			this.nome = dados.nome();
@@ -134,14 +132,6 @@ public class Barco {
 		
 	}
 	
-	public void inativar() {
-		this.ativo = false;
-	}
-
-	public void ativar() {
-		this.ativo = true;
-		
-	}
 
 	
 

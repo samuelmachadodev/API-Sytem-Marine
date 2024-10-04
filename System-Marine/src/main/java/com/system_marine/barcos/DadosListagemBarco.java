@@ -9,7 +9,8 @@ public record DadosListagemBarco(
 		String tamanho,
 		String registro,
 		String observacoes,
-		int vaga) {
+		int vaga,
+		String imagemBase64) {
 	
 	public DadosListagemBarco(Barco barco) {
 		this(   barco.getId(),
@@ -20,7 +21,8 @@ public record DadosListagemBarco(
 				barco.getTamanho(),
 				barco.getRegistro(),
 				barco.getObservacoes(),
-				barco.getVaga()
+				barco.getVaga(),
+				barco.getImagemBase64()
 				);
 	}
 

@@ -11,7 +11,8 @@ public record DadosDetalhamentoBarco(
 		String tamanho,
 		String registro,
 		String observacoes,
-		int vaga
+		int vaga,
+		String imagemBase64
         
 		
 		) { 
@@ -25,7 +26,8 @@ public record DadosDetalhamentoBarco(
 						barco.getTamanho(),
 						barco.getRegistro(),
 						barco.getObservacoes(),
-						barco.getVaga()
+						barco.getVaga(),
+						barco.getImagemBase64()
 						);
 			}
 	

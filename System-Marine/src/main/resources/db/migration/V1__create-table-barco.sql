@@ -8,6 +8,7 @@ create table barco (
     registro varchar(50) not null,
     observacoes varchar(500),
     vaga int not null,
+    imagem_base64 mediumtext,
     
     primary key (id),
     unique (registro)

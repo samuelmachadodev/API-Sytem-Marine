@@ -19,6 +19,8 @@ public record DadosCadastroBarco (
 		String registro,
 		String observacoes,
 		@NotNull
-		int vaga) {
+		int vaga,
+		String imagemBase64) {
+	   
 	
 }
